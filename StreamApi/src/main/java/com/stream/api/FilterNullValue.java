@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class FilterNullValue {
 
@@ -14,7 +15,14 @@ public class FilterNullValue {
 		
 		List<String> reslList = list.stream().filter(Objects::nonNull).collect(Collectors.toList());
 		System.out.println(reslList);
+		solution2(list);
 
+	}
+	
+	public static void solution2(List<String> list) {
+		
+		List<String> list2 = list.stream().flatMap(s->s==null? Stream.empty():Stream.of(s)).collect(Collectors.toList());
+		System.out.println(list2);
 	}
 
 }
