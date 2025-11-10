@@ -13,6 +13,7 @@ public class PartitionEvenAndOddNum {
 		List<Integer> list = Arrays.asList(1,3,5,9,4,0,2,6);
 		Map<Boolean, List<Integer>> map = list.stream().collect(Collectors.partitioningBy(n->n%2==0));
 		System.out.println(map);
+		
 
 	}
 
